@@ -7,8 +7,7 @@ namespace GithubHelper.Controllers
 {
     public class GithubController : ApiController
     {
-        private Github githubClient;
-        //will be injected by Ninject
+        private readonly Github githubClient;
 
         public GithubController(Github github)
         {
