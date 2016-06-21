@@ -24,11 +24,17 @@ namespace GithubManager.Services
 
         private const string AppNameForGithubClient = "TestGithubApp";
 
+        /// <summary>
+        /// Creates new GitHub client
+        /// </summary>
         private GitHubClient CreateClient()
         {
             return new GitHubClient(new ProductHeaderValue(AppNameForGithubClient));
         }
 
+        /// <summary>
+        /// Validates repository for existence and correct language
+        /// </summary>
         private void ValidateRepository(Repository repo, string owner, string name)
         {
             if (repo == null)

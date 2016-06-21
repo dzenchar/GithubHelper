@@ -1,1 +1,1 @@
-﻿var app = angular.module("GithubApp", []);
+﻿var app = angular.module('GithubApp', []);
