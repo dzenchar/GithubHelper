@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GithubHelper", "GithubHelper\GithubHelper.csproj", "{30E9A091-07C8-42B1-AC43-AFE7F087171E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GithubManager", "GithubManager\GithubManager.csproj", "{91A48925-15B8-4A5D-9636-6BF9109CA57B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GithubManagerTests", "GithubManagerTests\GithubManagerTests.csproj", "{05376BC9-7B5E-4388-945A-62151F481E5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30E9A091-07C8-42B1-AC43-AFE7F087171E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30E9A091-07C8-42B1-AC43-AFE7F087171E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30E9A091-07C8-42B1-AC43-AFE7F087171E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30E9A091-07C8-42B1-AC43-AFE7F087171E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91A48925-15B8-4A5D-9636-6BF9109CA57B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91A48925-15B8-4A5D-9636-6BF9109CA57B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91A48925-15B8-4A5D-9636-6BF9109CA57B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91A48925-15B8-4A5D-9636-6BF9109CA57B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05376BC9-7B5E-4388-945A-62151F481E5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05376BC9-7B5E-4388-945A-62151F481E5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05376BC9-7B5E-4388-945A-62151F481E5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05376BC9-7B5E-4388-945A-62151F481E5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

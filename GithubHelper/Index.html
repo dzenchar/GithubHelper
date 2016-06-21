@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html ng-app="GithubApp">
+<head>
+    <title>Git helper</title>
+	<meta charset="utf-8" /><link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div ng-controller="MainController">
+        <div class="panel panel-default">
+            <div class="panel-heading">Put the repo owner's name and the name of repo on Github. After that the description of this project will be below.</div>
+            <div class="panel-body">
+                <form name="MainForm">
+                    <div class="form-group">
+                        <label for="Owner">Owner</label>
+                        <input type="text" class="form-control" id="Owner" placeholder="Owner" ng-model="owner">
+                    </div>
+                    <div class="form-group">
+                        <label for="Repo">Repo</label>
+                        <input type="text" class="form-control" id="Repo" placeholder="Repo" ng-model="repo">
+                    </div>
+                    <button class="btn btn-primary" ng-click="CheckBtn_Click()" ng-disabled="buttonDisable">Check</button>
+                </form>
+            </div>
+            <div class="panel-heading">
+
+                <div class="alert alert-success" role="alert" ng-show="!hasErrors">{{success}}</div>
+
+                <div class="alert alert-danger" role="alert" ng-show="hasErrors">{{error}}</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.js"></script>
+    
+    <script src="scripts/App.js"></script>
+    <script src="scripts/GithubService.js"></script>
+    <script src="scripts/MainController.js"></script>
+</body>
+</html>
