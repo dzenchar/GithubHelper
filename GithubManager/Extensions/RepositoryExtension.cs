@@ -11,12 +11,16 @@ namespace GithubManager
     {
 
         private static string CSharpStringName = "C#";
+
         /// <summary>
         /// Check the language of the repository
         /// </summary>
         /// <param name="repo">It is the repository, which we are going to check.</param>
         /// <returns></returns>
-        public static bool HasCorrectLanguage(this Repository repo) => repo.Language == CSharpStringName;
+        public static bool HasCorrectLanguage(this Repository repo)
+        {
+            return repo.Language == CSharpStringName;
+        }
 
         /// <summary>
         /// The repository from GitHubClient without exceptions.

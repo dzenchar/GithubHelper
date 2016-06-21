@@ -46,8 +46,10 @@
   <ItemGroup>
     <Compile Include="Services\GithubService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepositoryExtension.cs" />
+    <Compile Include="Extensions\RepositoryExtension.cs" />
     <Compile Include="Interface\IGithubService.cs" />
+    <Compile Include="Exceptions\RepositoryNotFoundException.cs" />
+    <Compile Include="Exceptions\IncorrectRepositoryLanguageException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

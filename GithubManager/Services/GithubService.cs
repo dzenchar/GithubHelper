@@ -1,5 +1,5 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using GithubManager.Exceptions;
 using GithubManager.Interface;
 using Octokit;
 
@@ -15,7 +15,7 @@ namespace GithubManager.Services
         /// <returns></returns>
         public async Task<string> GetDescription(string owner, string name)
         {
-            var client = NewClient();
+            var client = CreateClient();
             var repo = await client.GetRepositoryOrDefault(owner, name).ConfigureAwait(false);
             ValidateRepository(repo, owner, name);
             string description = repo.Description;
@@ -24,14 +24,17 @@ namespace GithubManager.Services
 
         private const string AppNameForGithubClient = "TestGithubApp";
 
-        private GitHubClient NewClient() => new GitHubClient(new ProductHeaderValue(AppNameForGithubClient));
+        private GitHubClient CreateClient()
+        {
+            return new GitHubClient(new ProductHeaderValue(AppNameForGithubClient));
+        }
 
         private void ValidateRepository(Repository repo, string owner, string name)
         {
             if (repo == null)
-                throw new Exception($"Cannot load  {owner}/{name} ");
+                throw new RepositoryNotFoundException($"Cannot load  {owner}/{name} ");
             if (!repo.HasCorrectLanguage())   
-                throw new Exception($" {owner}/{name} is not C# application.");
+                throw new IncorrectRepositoryLanguageException($" {owner}/{name} is not C# application.");
         }
     }
 }
