@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using log4net;
 using Octokit;
 
 namespace GithubManager
@@ -29,7 +26,7 @@ namespace GithubManager
         /// <param name="owner">It is a github login</param>
         /// <param name="name">The name of the repository.</param>
         /// <returns></returns>
-        public static async Task<Repository> GetRepositoryOrDefault(this GitHubClient client, string owner, string name)
+        public static async Task<Repository> GetRepositoryOrDefault(this GitHubClient client, string owner, string name, ILog logger)
         {
             try
             {
@@ -37,6 +34,8 @@ namespace GithubManager
             }
             catch (ApiException e)
             {
+                logger.Error("Couldn't retrieve repository info", e);
+
                 return null;
             }
         }

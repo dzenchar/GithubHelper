@@ -2,6 +2,7 @@ using Microsoft.Practices.Unity;
 using System.Web.Http;
 using GithubManager.Interface;
 using GithubManager.Services;
+using log4net;
 using Unity.WebApi;
 
 namespace GithubHelper
@@ -17,7 +18,8 @@ namespace GithubHelper
             
             // e.g. container.RegisterType<ITestService, TestService>();
 
-            container.RegisterType<IGithubService, GithubService>();
+            container.RegisterType<IGithubService, GithubService>(new TransientLifetimeManager());
+            container.RegisterInstance<ILog>(LogManager.GetLogger("Main application logger"));
             
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
