@@ -2,16 +2,17 @@
 using System;
 using System.Threading.Tasks;
 using System.Web.Http;
+using GithubManager.Interface;
 
 namespace GithubHelper.Controllers
 {
     public class GithubController : ApiController
     {
-        private readonly Github githubClient;
+        private readonly IGithubService _githubService;
 
-        public GithubController(Github github)
+        public GithubController(IGithubService githubservice)
         {
-            githubClient = github;
+            _githubService = githubservice;
         }
 
         /// <summary>
@@ -37,7 +38,7 @@ namespace GithubHelper.Controllers
 
             #endregion
             
-            var description = await githubClient.GetDescription(owner, name);
+            var description = await _githubService.GetDescription(owner, name);
             return description;
         }
     }

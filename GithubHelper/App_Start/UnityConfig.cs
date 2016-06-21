@@ -1,6 +1,7 @@
 using Microsoft.Practices.Unity;
 using System.Web.Http;
-using GithubManager;
+using GithubManager.Interface;
+using GithubManager.Services;
 using Unity.WebApi;
 
 namespace GithubHelper
@@ -16,7 +17,7 @@ namespace GithubHelper
             
             // e.g. container.RegisterType<ITestService, TestService>();
 
-            container.RegisterType<Github>();
+            container.RegisterType<IGithubService, GithubService>();
             
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

@@ -1,10 +1,11 @@
 ﻿using System;
-using Octokit;
 using System.Threading.Tasks;
+using GithubManager.Interface;
+using Octokit;
 
-namespace GithubManager
+namespace GithubManager.Services
 {
-    public class Github
+    public class GithubService : IGithubService
     {
         /// <summary>
         /// Find the description of a C# repository.
@@ -21,7 +22,7 @@ namespace GithubManager
             return description;
         }
 
-        private string AppNameForGithubClient = "TestGithubApp";
+        private const string AppNameForGithubClient = "TestGithubApp";
 
         private GitHubClient NewClient() => new GitHubClient(new ProductHeaderValue(AppNameForGithubClient));
 
